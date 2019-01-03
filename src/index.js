@@ -6,6 +6,7 @@ import {Provider} from 'react-redux';
 import {AppContainer} from 'react-hot-loader';
 import configureStore, {history} from './configureStore';
 import {ConnectedRouter} from 'connected-react-router'
+import "./index.css"
 const store = configureStore();
 
 ReactDOM.render(

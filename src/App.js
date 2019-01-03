@@ -14,14 +14,14 @@ class App extends Component {
         return (
 
             <Router>
-                <Layout className="layout">
+                <div>
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route path="/login" component={Login}/>
                     </Switch>
                     {isFetching && <Loading/>}
 
-                </Layout>
+                </div>
             </Router>
         )
     }
