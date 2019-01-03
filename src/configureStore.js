@@ -5,7 +5,6 @@ import rootSaga from './sagas'
 import { loadingBarMiddleware } from 'react-redux-loading-bar'
 import { createBrowserHistory } from 'history'
 import { routerMiddleware } from 'connected-react-router'
-// import createRootReducer from './reducers'
 
 
 const win = window;
