@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import Loading from './components/load';
 import Home from './containers/home';
 import Login from './containers/login';
-
+import 'antd/dist/antd.css'
 
 class App extends Component {
 
