@@ -29,7 +29,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
     return {
-        isFetching: state.app.isFetching
+        isFetching: state.global.isFetching
     }
 }
 

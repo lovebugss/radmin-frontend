@@ -16,6 +16,7 @@
     "history": "^4.7.2",
     "lodash-decorators": "^6.0.1",
     "marked": "^0.6.0",
+    "mockjs": "^1.0.1-beta3",
     "prop-types": "^15.6.2",
     "rc-banner-anim": "^2.1.2",
     "rc-queue-anim": "^1.6.10",

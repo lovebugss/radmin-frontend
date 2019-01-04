@@ -3,10 +3,11 @@
  */
 import {combineReducers} from 'redux';
 import {loadingBarReducer} from 'react-redux-loading-bar';
-import { connectRouter } from 'connected-react-router'
+import {connectRouter} from 'connected-react-router'
 
 const initialState = {
     isFetching: false,
+    isCollapsed: false,
     // key:'home',
     msg: {
         code: 1,
@@ -21,7 +22,8 @@ export const actionsTypes = {
     USER_REGISTER: "USER_REGISTER",
     RESPONSE_USER_INFO: "RESPONSE_USER_INFO",
     SET_MESSAGE: "SET_MESSAGE",
-    USER_AUTH: "USER_AUTH"
+    USER_AUTH: "USER_AUTH",
+    MENU_COLLAPSE: 'MENU_COLLAPSE',
 };
 
 // Action Creators
@@ -33,10 +35,16 @@ export const actions = {
             msgContent: ''
         }
     },
-    click_head:(key)=>{
-        return{
-            type:actionsTypes.CLICK_BTN,
+    click_head: (key) => {
+        return {
+            type: actionsTypes.CLICK_BTN,
             key
+        }
+    },
+    menu_collapse:(collapse)=>{
+        return{
+            type:actionsTypes.MENU_COLLAPSE,
+            collapse
         }
     }
 };
@@ -65,14 +73,18 @@ export function reducer(state = initialState, action) {
             return {
                 ...state, key: action.key
             };
+        case actionsTypes.MENU_COLLAPSE:
+            return {
+                ...state, isCollapsed: !state.isCollapsed
+            }
         default:
             return state
     }
 };
 
-const rootReducer = (history)=> combineReducers({
+const rootReducer = (history) => combineReducers({
     router: connectRouter(history),
-    app: reducer,
+    global: reducer,
     loadingBar: loadingBarReducer,
 });
 
